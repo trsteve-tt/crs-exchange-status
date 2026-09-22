@@ -16,7 +16,8 @@ h2{font-size:16px;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid 
 .card .n{font-size:23px;font-weight:700;line-height:1}
 .card .l{font-size:11px;color:#475569;margin-top:4px;text-transform:uppercase;letter-spacing:.04em}
 .card .s{font-size:11.5px;color:#64748b;margin-top:5px;line-height:1.45}
-.ladder{font-size:12px;color:#475569;margin:2px 0 16px;line-height:1.7}
+.ladder{font-size:12px;color:#475569;margin:10px 0 18px;line-height:1.85}
+h3.unit{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:#64748b;margin:18px 0 8px;font-weight:700}
 .ladder b{color:#0f172a}
 .ladder code{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#0891b2}
 .ok .n{color:#16a34a} .bad .n{color:#dc2626} .warn .n{color:#d97706} .mut .n{color:#64748b}
@@ -60,7 +61,7 @@ th.s[data-dir="-1"]::after{content:"93";opacity:.95;color:#0891b2}
 
 <h1>CRS Exchange Status &mdash; RP2025</h1>
 <p class="sub">Thailand Revenue Department &middot; reporting period ending 31 December 2025
-&middot; generated <b>22 September 2026, 18:28 +07</b>. Every jurisdiction is listed in both directions, including
+&middot; generated <b>22 September 2026, 18:35 +07</b>. Every jurisdiction is listed in both directions, including
 those with nothing sent and nothing received. No taxpayer data appears on this page.</p>
 
 <div class="cards"><div class="card ok"><div class="n">619</div><div class="l">messages collected</div></div><div class="card mut"><div class="n">77</div><div class="l">jurisdictions</div></div><div class="card warn"><div class="n">17</div><div class="l">not started</div></div><div class="card bad"><div class="n">28</div><div class="l">refused by CTS</div></div><div class="card mut"><div class="n">87</div><div class="l">files received</div></div></div>
@@ -79,14 +80,17 @@ those with nothing sent and nothing received. No taxpayer data appears on this p
 moved, and how many <b>jurisdictions</b> they reached. The stages reconcile &mdash;
 sent = delivered + refused, and delivered = collected + still in inbox.</p>
 
-<div class="cards"><div class="card mut"><div class="n">703</div><div class="l">messages sent</div><div class="s">to <b>52</b> jurisdictions</div></div><div class="card ok"><div class="n">675</div><div class="l">delivered</div><div class="s"><b>49</b> jurisdictions have them</div></div><div class="card ok"><div class="n">619</div><div class="l">collected by partner</div><div class="s"><b>44</b> jurisdictions downloaded</div></div><div class="card warn"><div class="n">56</div><div class="l">still in inbox</div><div class="s">delivered, not yet picked up</div></div><div class="card bad"><div class="n">28</div><div class="l">refused by CTS</div><div class="s">16 transmission channel not active · 12 recipient certificate expired/revoked</div></div></div>
-<p class="ladder">Where messages stand with CTS: <code>RC024</code> downloaded by the partner <b>571</b> · <code>RC023</code> in the partner&#x27;s inbox <b>56</b> · <code>RC034</code> pushed to the partner&#x27;s SFTP <b>48</b></p>
+<h3 class="unit">By jurisdiction &mdash; how many partners</h3>
+<div class="cards"><div class="card mut"><div class="n">52</div><div class="l">sent</div><div class="s">jurisdictions</div></div><div class="card ok"><div class="n">49</div><div class="l">delivered</div><div class="s">jurisdictions</div></div><div class="card ok"><div class="n">44</div><div class="l">downloaded</div><div class="s">jurisdictions</div></div><div class="card warn"><div class="n">7</div><div class="l">still in inbox</div><div class="s">jurisdictions</div></div><div class="card bad"><div class="n">3</div><div class="l">refused by CTS</div><div class="s"><b>GH</b>, <b>MV</b>, <b>SC</b></div></div><div class="card ok"><div class="n">8</div><div class="l">accepted</div><div class="s">jurisdictions</div></div><div class="card ok"><div class="n">0</div><div class="l">rejected</div><div class="s">jurisdictions</div></div><div class="card warn"><div class="n">42</div><div class="l">awaiting a verdict</div><div class="s">jurisdictions</div></div></div>
 
-<p class="sub">A partner acknowledges our data separately, by transmitting a status
-message back. Until we collect and read that, we do not know whether they accepted
-it &mdash; delivery is not acceptance.</p>
+<h3 class="unit">By message &mdash; how many files</h3>
+<div class="cards"><div class="card mut"><div class="n">703</div><div class="l">sent</div><div class="s">handed to CTS</div></div><div class="card ok"><div class="n">675</div><div class="l">delivered</div><div class="s">reached the partner</div></div><div class="card ok"><div class="n">619</div><div class="l">downloaded</div><div class="s">partner has taken it</div></div><div class="card warn"><div class="n">56</div><div class="l">still in inbox</div><div class="s">delivered, not picked up</div></div><div class="card bad"><div class="n">28</div><div class="l">refused by CTS</div><div class="s">never reached the partner</div></div><div class="card ok"><div class="n">15</div><div class="l">accepted</div><div class="s">partner confirmed the data</div></div><div class="card ok"><div class="n">0</div><div class="l">rejected</div><div class="s">partner refused the data</div></div><div class="card warn"><div class="n">660</div><div class="l">awaiting a verdict</div><div class="s">no status message yet</div></div></div>
 
-<div class="cards"><div class="card ok"><div class="n">15</div><div class="l">accepted by partner</div><div class="s">partner confirmed the data</div></div><div class="card ok"><div class="n">0</div><div class="l">rejected by partner</div><div class="s">partner refused the data</div></div><div class="card warn"><div class="n">660</div><div class="l">awaiting a verdict</div><div class="s">delivered, no status message yet</div></div><div class="card bad"><div class="n">197</div><div class="l">replies waiting at CTS</div><div class="s">sent by partners, not yet collected</div></div></div>
+<p class="ladder">Where messages stand with CTS: <code>RC024</code> downloaded by the partner <b>571</b> · <code>RC023</code> in the partner&#x27;s inbox <b>56</b> · <code>RC034</code> pushed to the partner&#x27;s SFTP <b>48</b><br>
+A partner acknowledges separately, by transmitting a status message back, so
+<b>delivery is not acceptance</b>. <b>197</b> replies from <b>12</b> jurisdictions
+have arrived at CTS and are still to be collected &mdash; until they are, the
+accepted and awaiting figures above understate what partners have actually said.</p>
 
 <p class="sub">Date is when it was sent, or when it was built if it has not gone yet.
 Sent and built come from our own records; delivered and refused come from the OECD
